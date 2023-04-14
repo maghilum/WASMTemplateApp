@@ -1,0 +1,18 @@
+﻿@inject IJSRuntime JS
+
+<nav class="app-header navbar navbar-expand-lg">
+    <button type="button" id="sidebarCollapse" class="btn default">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+    </button>
+    <div class="navbar-collapse collapse justify-content-end" id="navbarNav">
+    </div>
+</nav>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await JS.InvokeVoidAsync("initSideBarToggle");
+    }
+}

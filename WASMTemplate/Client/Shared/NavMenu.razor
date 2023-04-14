@@ -1,0 +1,73 @@
+﻿<nav id="sidebar" class="sticky-top" style="overflow-y: auto;height: 100%;">
+    <div class="sidebar-header text-center">
+        <h5 class="text-center sidebar-title mb-0">PSMIS</h5>
+        <small class="app-version">v2023.0.1</small>@*Update this version*@
+        <hr class="mt-1" />
+    </div>
+    <ul class="list-unstyled components mb-0">
+        <li>
+            <NavLink href="" Match="NavLinkMatch.All">
+                Home
+            </NavLink>
+        </li>
+        <li>
+            <NavLink href="applicants" Match="NavLinkMatch.Prefix">
+                Applicants
+            </NavLink>
+        </li>
+        <li>
+            <NavLink href="scores" Match="NavLinkMatch.Prefix">
+                Scores
+            </NavLink>
+        </li>
+        <li>
+            <a href="#nav-ranking" aria-controls="nav-ranking" data-toggle="collapse" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Transactions</a>
+            <ul class="list-unstyled collapse" id="nav-ranking">
+                <li> <NavLink href="ranking/top" Match="NavLinkMatch.Prefix">Top</NavLink> </li>
+                <li> <NavLink href="ranking/expanded" Match="NavLinkMatch.Prefix">Expanded</NavLink> </li>
+                <li> <NavLink href="ranking/settings" Match="NavLinkMatch.Prefix">Settings</NavLink> </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#nav-scholars" aria-controls="nav-scholars" data-toggle="collapse" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Scholars</a>
+            <ul class="list-unstyled collapse" id="nav-scholars">
+                <li> <NavLink href="scholar/management" Match="NavLinkMatch.Prefix">Top</NavLink> </li>
+                <li> <NavLink href="scholar/educrecord" Match="NavLinkMatch.Prefix">Educ. Record</NavLink> </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#nav-payroll" aria-controls="nav-payroll" data-toggle="collapse" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Payroll</a>
+            <ul class="list-unstyled collapse" id="nav-payroll">
+                <li> <NavLink href="payroll/posting" Match="NavLinkMatch.Prefix">Posting</NavLink> </li>
+                <li> <NavLink href="payroll/atm" Match="NavLinkMatch.Prefix">ATM</NavLink> </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#nav-maintenance" aria-controls="nav-maintenance" data-toggle="collapse" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Maintenance</a>
+            <ul class="list-unstyled collapse" id="nav-maintenance">
+                <li> <NavLink href="maintenance/dropping" Match="NavLinkMatch.Prefix">Dropping</NavLink> </li>
+                <li> <NavLink href="maintenance/schedules" Match="NavLinkMatch.Prefix">Schedules</NavLink> </li>
+                <li> <NavLink href="maintenance/centers" Match="NavLinkMatch.Prefix">Centers</NavLink> </li>
+                <li> <NavLink href="maintenance/entitlements" Match="NavLinkMatch.Prefix">Entitlements</NavLink> </li>
+                <li> <NavLink href="maintenance/lbpinfo" Match="NavLinkMatch.Prefix">LBP Info</NavLink> </li>
+                <li> <NavLink href="maintenance/signatories" Match="NavLinkMatch.Prefix">Signatories</NavLink> </li>
+                <li> <NavLink href="maintenance/interviewers" Match="NavLinkMatch.Prefix">Interviewers</NavLink> </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#nav-administration" aria-controls="nav-administration" data-toggle="collapse" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Administration</a>
+            <ul class="list-unstyled collapse" id="nav-administration">
+                <li> <NavLink href="administration/users" Match="NavLinkMatch.Prefix">Users</NavLink> </li>
+            </ul>
+        </li>
+        @{
+            try
+            {
+                _ = JS?.InvokeVoidAsync("initBootrapAppMenu");
+            }
+            catch { }
+        }
+    </ul>
+</nav>
+
+            
